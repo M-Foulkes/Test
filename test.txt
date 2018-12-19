@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Enter number of chips: ");
+        int m = kb.nextInt();
+        System.out.print("Enter how many at a time: ");
+        int n = kb.nextInt();
+        int w = m-n;
+        System.out.println(fact(m));
+        System.out.println(orial(n));
+        System.out.println(factorial(w));
+        System.out.println("p = " + fact(m)/(orial(n)*(factorial(w))));
+    }
+    public static int fact(int m)
+    {    
+        if (m==0)
+            return 1; 
+        else
+            return(m*fact(m-1));
+    }
+    public static int orial(int n)
+    {    
+        if (n==0)
+            return 1; 
+        else
+            return(n*orial(n-1));
+    }
+    public static int factorial(int w)
+    {    
+        if (w==0)
+            return 1; 
+        else
+            return(w*factorial(w-1));
+    }
+}
