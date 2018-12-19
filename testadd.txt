@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner kb = new Scanner(System.in);
+        System.out.print("Enter a Roman Numeral: ");
+        String r = kb.nextLine();
+        
+        int a[]= new int[99];
+        
+        int i;
+    
+        
+        for (i = 0; i < r.length(); i++)
+        {
+            if (r.substring(i, i+1).equals("M"))
+                a[i]=1000;
+            else if (r.substring(i, i+1).equals("D"))
+                a[i]=500;
+            else if (r.substring(i, i+1).equals("C"))
+                a[i]=100;
+            else if (r.substring(i, i+1).equals("L"))
+                a[i]=50;
+            else if (r.substring(i, i+1).equals("X"))
+                a[i]=10;
+            else if (r.substring(i, i+1).equals("V"))
+                a[i]=5;
+            else if (r.substring(i, i+1).equals("I"))
+                a[i]=1;
+            //System.out.println(a[i]);
+        }
+        
+        int tot = 0; 
+        
+        for (i = 0; i < r.length()-1; i++)
+        {
+            if (a[i]>=a[i+1])
+                tot+=a[i];
+            else
+                tot-=a[i];
+        }
+        
+        tot+=a[r.length()-1];
+        System.out.println("The value is " + tot);
+    }
+}
